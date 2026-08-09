@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Study Hub - Distraction-Free Playlists</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container py-5" style="max-width: 1200px;">
+
+    <!-- PAGE 1: Welcome & Start Screen -->
+    <div id="page1" class="view-screen active">
+        <div class="row justify-content-center">
+            <div class="col-md-10 text-center">
+                <div class="welcome-card p-5 my-4">
+                    
+                    <!-- Cute Emoji Stickers Stage -->
+                    <div class="sticker-stage">
+                        <span class="emoji-sticker" title="Brain Power!">🧠</span>
+                        <span class="emoji-sticker" title="Study Mode!">📚</span>
+                        <span class="emoji-sticker" title="Let's Code!">💻</span>
+                    </div>
+
+                    <h1 class="fw-bold text-primary mb-3">Distraction-Free Study Hub</h1>
+                    <p class="text-secondary fs-5 mb-4">
+                        Zero recommendations, zero algorithms. Access your programming playlists directly and stay focused on learning!
+                    </p>
+
+                    <button class="btn btn-start-study" onclick="goToDashboard()">
+                        <i class="fa-solid fa-rocket me-2"></i> Start Study Mode
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: Subjects & Playlists Grid -->
+    <div id="page2" class="view-screen">
+        
+        <!-- Header Controls -->
+        <div class="d-flex justify-content-between align-items-center mb-4 bg-white p-3 rounded-4 shadow-sm">
+            <div>
+                <h3 class="fw-bold text-primary mb-0"><i class="fa-solid fa-graduation-cap me-2"></i>Subject Playlists</h3>
+                <small class="text-muted">Click any image or button to launch the course directly.</small>
+            </div>
+            <button onclick="goToHome()" class="btn btn-outline-secondary rounded-pill px-3">
+                <i class="fa-solid fa-house me-1"></i> Home
+            </button>
+        </div>
+
+        <!-- Course Cards Grid (3 Columns Layout: col-md-4) -->
+        <div class="row g-4">
+            
+            <!-- 1. DSA in Java by PW -->
+            <div class="col-md-4">
+                <div class="subject-card">
+                    <a href="https://youtube.com/playlist?list=PLxgZQoSe9cg00xyG5gzb5BMkOClkch7Gr&si=FP3tuJC80qmsTOlp" target="_blank" rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" class="subject-banner" alt="DSA Data Structures Banner">
+                    </a>
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge-subject">Physics Wallah</span>
+                            <small class="text-muted"><i class="fa-brands fa-youtube text-danger me-1"></i> Playlist</small>
+                        </div>
+                        <h5 class="fw-bold text-dark">1. DSA in Java</h5>
+                        <p class="text-muted small">Complete Data Structures & Algorithms course taught in Java.</p>
+                        <a href="https://youtube.com/playlist?list=PLxgZQoSe9cg00xyG5gzb5BMkOClkch7Gr&si=FP3tuJC80qmsTOlp" target="_blank" class="btn btn-danger w-100 btn-playlist">
+                            <i class="fa-solid fa-play me-2"></i> Open DSA Playlist
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. SQL by CodeWithHarry -->
+            <div class="col-md-4">
+                <div class="subject-card">
+                    <a href="https://youtu.be/yE6tIle64tU?si=u0Ib_bybSzBKU_8g" target="_blank" rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=600&q=80" class="subject-banner" alt="SQL Database Banner">
+                    </a>
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge-subject">Code With Harry</span>
+                            <small class="text-muted"><i class="fa-brands fa-youtube text-danger me-1"></i> Video Course</small>
+                        </div>
+                        <h5 class="fw-bold text-dark">2. SQL One-Shot Course</h5>
+                        <p class="text-muted small">Master relational databases and SQL queries step-by-step.</p>
+                        <a href="https://youtu.be/yE6tIle64tU?si=u0Ib_bybSzBKU_8g" target="_blank" class="btn btn-danger w-100 btn-playlist">
+                            <i class="fa-solid fa-play me-2"></i> Watch SQL Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Web Development by CodeWithHarry -->
+            <div class="col-md-4">
+                <div class="subject-card">
+                    <a href="https://www.codewithharry.com/courses/the-ultimate-web-dev-course" target="_blank" rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=600&q=80" class="subject-banner" alt="Web Development Banner">
+                    </a>
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge-subject">Code With Harry</span>
+                            <small class="text-muted"><i class="fa-solid fa-globe text-primary me-1"></i> Web Course</small>
+                        </div>
+                        <h5 class="fw-bold text-dark">3. Ultimate Web Development</h5>
+                        <p class="text-muted small">Full-stack web development path covering HTML, CSS, JS, and React.</p>
+                        <a href="https://www.codewithharry.com/courses/the-ultimate-web-dev-course" target="_blank" class="btn btn-primary w-100 btn-playlist">
+                            <i class="fa-solid fa-arrow-up-right-from-square me-2"></i> Open Web Dev Course
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. AI and ML -->
+            <div class="col-md-4">
+                <div class="subject-card">
+                    <a href="https://youtu.be/UNQDWY8Myjs?si=AP-Nnzti-pO2l0cu" target="_blank" rel="noopener">
+                        <img src="https://img.youtube.com/vi/UNQDWY8Myjs/hqdefault.jpg" class="subject-banner" alt="AI ML Neural Network Banner">
+                    </a>
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge-subject">AI/ML Essentials</span>
+                            <small class="text-muted"><i class="fa-brands fa-youtube text-danger me-1"></i> Video Tutorial</small>
+                        </div>
+                        <h5 class="fw-bold text-dark">4. AI & Machine Learning</h5>
+                        <p class="text-muted small">Foundational concepts in artificial intelligence and machine learning models.</p>
+                        <a href="https://youtu.be/UNQDWY8Myjs?si=AP-Nnzti-pO2l0cu" target="_blank" class="btn btn-danger w-100 btn-playlist">
+                            <i class="fa-solid fa-play me-2"></i> Watch AI & ML Tutorial
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Learn With Amrita (Part 1 & Part 2) -->
+            <div class="col-md-4">
+                <div class="subject-card">
+                    <!-- Banner Image -->
+                    <a href="javascript:void(0)" onclick="openAmritaModal()">
+                        <img src="https://th.bing.com/th/id/OIP.0HMd3UBqpu478hk_HbhEaAHaDt?w=302&h=174&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" class="subject-banner" alt="Learn With Amrita Coding Banner">
+                    </a>
+                    
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge-subject">Learn With Amrita</span>
+                            <small class="text-muted"><i class="fa-brands fa-youtube text-danger me-1"></i> 2 Playlists</small>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">5. Technosage</h5>
+                        <p class="text-muted small mb-3">Choose between core programming concepts or dedicated string practice.</p>
+
+                        <!-- Trigger Button -->
+                        <button type="button" class="btn btn-danger w-100 btn-playlist py-2 fw-bold" onclick="openAmritaModal()">
+                            <i class="fa-solid fa-layer-group me-2"></i> click to learn LeetCode
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Shree Krishna -->
+            <div class="col-md-4">
+                <div class="subject-card">
+                    <a href="https://youtube.com/playlist?list=PL4wqN3EWZehiQO6cXwsV0mQpQgOrnfVWO&si=s4KGZmCwVjIKjDSr" target="_blank" rel="noopener">
+                        <img src="https://m.media-amazon.com/images/I/71mluZ3+WYL.jpg" class="subject-banner" alt="Shree Krishna Playlist Banner">
+                    </a>
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge-subject">Devotional & Edits</span>
+                            <small class="text-muted"><i class="fa-brands fa-youtube text-danger me-1"></i> Playlist</small>
+                        </div>
+                        <h5 class="fw-bold text-dark">6. Shree Krishna</h5>
+                        <p class="text-muted small">Peaceful and motivating Shree Krishna edits and audio playlist.</p>
+                        <a href="https://youtube.com/playlist?list=PL4wqN3EWZehiQO6cXwsV0mQpQgOrnfVWO&si=s4KGZmCwVjIKjDSr" target="_blank" class="btn btn-danger w-100 btn-playlist">
+                            <i class="fa-solid fa-play me-2"></i> Open Playlist
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Custom Popup Modal for Section 5 -->
+<div id="amritaModal" class="custom-modal-overlay">
+    <div class="custom-modal-card">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold text-primary m-0">
+                <i class="fa-brands fa-youtube text-danger me-2"></i>Select Course Part
+            </h5>
+            <button type="button" class="btn-close" onclick="closeAmritaModal()"></button>
+        </div>
+        
+        <p class="text-muted small mb-3">Which part of the series would you like to study today?</p>
+        
+        <!-- Part 1 Link -->
+        <a href="https://youtube.com/playlist?list=PLjOcsOwEjb12G3uwXNdzyyIs0tNql-2Am&si=vFVQk5p3wMv45Ls1" 
+           target="_blank" 
+           rel="noopener"
+           class="modal-option-card"
+           onclick="closeAmritaModal()">
+            <div class="me-3 fs-2 text-danger">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <div>
+                <h6 class="fw-bold mb-1">Part 1: Core Concepts</h6>
+                <small class="text-muted">Master foundational programming fundamentals and logic building.</small>
+            </div>
+            <div class="ms-auto text-muted">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </a>
+
+        <!-- Part 2 Link -->
+        <a href="https://youtube.com/playlist?list=PLjOcsOwEjb135TKtYNgd08hnioIV-C1rR&si=bEzAQ-CvCj_8-ggY" 
+           target="_blank" 
+           rel="noopener"
+           class="modal-option-card"
+           onclick="closeAmritaModal()">
+            <div class="me-3 fs-2 text-danger">
+                <i class="fa-solid fa-font"></i>
+            </div>
+            <div>
+                <h6 class="fw-bold mb-1">Part 2: Strings Programming Questions</h6>
+                <small class="text-muted">Practice string manipulation algorithms and interview challenges.</small>
+            </div>
+            <div class="ms-auto text-muted">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </a>
+         <!-- Part 3 Link -->
+        <a href="https://leetcode.com/" 
+           target="_blank" 
+           rel="noopener"
+           class="modal-option-card"
+           onclick="closeAmritaModal()">
+            <div class="me-3 fs-2 text-danger">
+                <i class="fa-solid fa-font"></i>
+            </div>
+            <div>
+                <h6 class="fw-bold mb-1">Leetcode Link</h6>
+                <small class="text-muted">Practice string manipulation algorithms and interview challenges.</small>
+            </div>
+            <div class="ms-auto text-muted">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- JavaScript Router & Modal Controller -->
+<script>
+    function goToDashboard() {
+        document.getElementById('page1').classList.remove('active');
+        setTimeout(() => {
+            document.getElementById('page2').classList.add('active');
+        }, 150);
+    }
+
+    function goToHome() {
+        document.getElementById('page2').classList.remove('active');
+        setTimeout(() => {
+            document.getElementById('page1').classList.add('active');
+        }, 150);
+    }
+
+    function openAmritaModal() {
+        document.getElementById('amritaModal').classList.add('show');
+    }
+
+    function closeAmritaModal() {
+        document.getElementById('amritaModal').classList.remove('show');
+    }
+
+    // Close modal if user clicks outside the modal content box
+    window.onclick = function(event) {
+        const modal = document.getElementById('amritaModal');
+        if (event.target === modal) {
+            closeAmritaModal();
+        }
+    }
+</script>
+
+</body>
+</html>
